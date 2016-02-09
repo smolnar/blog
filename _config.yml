@@ -1,0 +1,26 @@
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:               The Clockwords
+url:                 http://theclockwords.com
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Samuel Molnar
+  url:               https://twitter.com/samuelmolnar
+  email:             molnar.samuel@gmail.com
+
+# Custom vars
+version:             1.0.0
+
+# Gems
+gems:
+  - jekyll-gist

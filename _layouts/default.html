@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    <div class="container content">
+      <main>
+        {{ content }}
+      </main>
+
+      <header class="masthead">
+        <img class="logo" src="/images/antikythera.svg" alt=""/>
+
+        <h2 class="masthead-title">
+          <a href="/" title="Home">{{ site.title }}</a>
+        </h2>
+
+        <small>
+          Ramblings about software by
+          <a href="{{ author.url }}" target="_blank">Samuel Molnár</a>.
+
+          <br>
+
+          Mostly about Ruby, JavaScript, databases and occasional peek into other things.
+        </small>
+
+        <br>
+
+        <small>
+          Subscribe with <a target="_blank" href="/atom.xml">RSS</a>.
+        </small>
+      </header>
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }} and throughout eternity</time>. Everything is under <a href="http://en.wikipedia.org/wiki/MIT_License">MIT</a>. Based on Jekyll with customized <a href="https://github.com/poole/poole">Poole</a>.
+          <br>
+          Artwork in the logo is actually an antikythera, an awesome antient astronomical clockwork.
+        </small>
+      </footer>
+    </div>
+
+    {% if site.analytics_id %}
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', '{{ site.analytics_id }}', 'auto');
+       ga('send', 'pageview');
+     </script>
+    {% endif %}
+  </body>
+</html>
