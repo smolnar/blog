@@ -13,12 +13,12 @@
         <img class="logo" src="/images/antikythera.svg" alt=""/>
 
         <h2 class="masthead-title">
-          <a href="/" title="Home">{{ site.title }}</a>
+          <a href="{{ site.base }}/" title="Home">{{ site.title }}</a>
         </h2>
 
         <small>
           Ramblings about software by
-          <a href="{{ author.url }}" target="_blank">Samuel Molnár</a>.
+          <a href="{{ site.author.url }}" target="_blank">Samuel Molnár</a>.
 
           <br>
 
@@ -28,7 +28,7 @@
         <br>
 
         <small>
-          Subscribe with <a target="_blank" href="/atom.xml">RSS</a>.
+          Subscribe with <a target="_blank" href="{{ site.base }}/atom.xml">RSS</a>.
         </small>
       </header>
 
