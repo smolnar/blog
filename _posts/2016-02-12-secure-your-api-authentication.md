@@ -163,7 +163,7 @@ You should extract `encode` and `decode` into separate class or service object, 
 
 There're also other robust solutions to authentication, for instance [OAuth2](http://oauth.net/2/). So before jumping into JWT, make sure to look into other alternatives as well.
 
-Resources:
+**Resources**:
 
 * <https://labs.kollegorna.se/blog/2015/04/build-an-api-now/>
 * <https://jwt.io/introduction/>
