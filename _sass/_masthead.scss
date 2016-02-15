@@ -23,21 +23,24 @@
     margin-bottom: 2rem;
     height: 300px;
   }
+
+  small {
+    margin-top: 0.5rem;
+    font-size: $root-font-size * 0.9;
+    font-weight: $masthead-font-weight;
+    color: $gray-4;
+  }
 }
 
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: $gray-4;
+  color: black;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 
   a {
     color: inherit;
     text-decoration: none;
-  }
-
-  small {
-    font-size: 75%;
-    font-weight: $masthead-font-weight;
-    opacity: .5;
   }
 }
