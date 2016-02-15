@@ -83,7 +83,7 @@ This is actually the easier solution to securing this API. Other option is to in
 
 ## JWT &ndash; JSON Web Tokens
 
-JWT is way more robust and standardized [RFC7519](https://tools.ietf.org/html/rfc7519) solution for authentication, since server is responsible for generating and validating tokens. Client only consumes generated token and passes it along in HTTP Authorization header, just like before, but without additional metadata. JWT is very exhaustive for the purpose of this blog, so if you want to have thorough knowledge of how it works, look into RFC or [check out its very consise introduction](https://jwt.io/introduction).
+JWT is way more robust and standardized [RFC7519](https://tools.ietf.org/html/rfc7519) solution for authentication, since server is responsible for generating and validating tokens. Client only consumes generated token and passes it along in HTTP Authorization header. Just like before, but without additional metadata. JWT is very exhaustive for the purpose of this blog, so if you want to have thorough knowledge of how it works, look into RFC or [check out its very consise introduction](https://jwt.io/introduction).
 
 For purpose of minimal solution, let's look at rolling you own authentication with JWT with Ruby. First, let me explain the basics.
 
@@ -142,7 +142,7 @@ def create
 end
 {% endhighlight %}
 
-That's it. Our user has a token. Let's authenticate him.
+That's it. Let's authenticate user with her token.
 
 {% highlight ruby %}
 # app/controllers/api/application_controller.rb
