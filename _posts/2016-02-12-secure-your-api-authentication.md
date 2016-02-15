@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Secure your API the right way
+title: Secure Your API Authentication
 ---
 
 Judging from numerous different APIs I've used, many of them lacked good authentication principles along with not so great assumptions about security, and often about url formats and versioning. Mine included.
