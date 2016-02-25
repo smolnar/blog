@@ -3,7 +3,7 @@ layout: post
 title: Secure Your API Authentication
 ---
 
-Judging from numerous different APIs I've used, many of them lacked good authentication principles along with not so great assumptions about security, and often about url formats and versioning. Mine included.
+Judging from numerous different APIs I've used, many of them lacked good authentication principles along with not so great security and often url formats and versioning. Not to be mistaken, mine included.
 
 [Hypermedia, REST and HTTP](http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http) are still bit misunderstood and many developers out there apply their own conclusions about how the authentication and versioning should look like, e.g. `/api/v1/posts.json?api_key=KEY`. But that's a whole another topic. Let's focus on authentication for now.
 
@@ -11,7 +11,7 @@ In most cases when building API, you want to build out some sort of authenticati
 
 ## API key as a parameter
 
-Passing API key along with request parameters mixes the key with parameters for the resource actions and altogether just brings confusion, since it derives its function from authentication. You may argue that it doesn't seem very odd, because many APIs use this approach, but that doesn't justify it. Secondly, passing an API key as a parameter usually involes server-side lookup for the key in the database and based on it's existence, server allows/denies access for the request. Much like this.
+Passing API key along with request parameters mixes the key with parameters for the resource actions and altogether just brings confusion, since it derives its function from authentication. You may argue that it doesn't seem very odd, because many APIs use this approach, but that doesn't justify it. Secondly, passing an API key as a parameter usually involves server-side lookup for the key in the database and based on it's existence, server allows/denies access for the request. Much like this.
 
 {% highlight ruby %}
 # app/controllers/api/application_controller.rb
@@ -25,7 +25,7 @@ end
 
 *Rather than rendering unauthorized response, you should consider raising an exception. Excuse my brewity.*
 
-At the first sight, this approach doesn't seem that bad. But once you consider [timing attacks](https://codahale.com/a-lesson-in-timing-attacks/), you can quickly realize, that you're approach is faulty from beginning. Comparison in database might be a subject to timining attack as well, unless you hash the key in database. But that's not a great solution either, since you're just covering the approach itself.
+At the first sight, this approach doesn't seem that bad. But once you consider [timing attacks](https://codahale.com/a-lesson-in-timing-attacks/), you can quickly realize, that you're approach is faulty from beginning. Comparison in database might be a subject to timining attack as well and can yield some unwanted information, unless you hash the key in database. But that's not a great solution either, since you're just covering the approach itself.
 
 Instead of passing the key as a parameter, you should rather use HTTP headers. HTTP header `Authorization` comes in hand. So you refactor the `authenticate` method accordingly.
 
@@ -77,9 +77,9 @@ end
 
 The key step is the `secure_compare`, otherwise you would expose the comparison to another timing attack. So if all goes well &ndash; user is found and the key matches user's key, you receive `user` object from `Api::AuthenticationService` and continue with the request or in case of `nil` or exception, you halt and render unauthrorized response. 
 
-But as you can see, this adds new authrorization level for a consumer of the API, since he has to make sure to pass in the email on every request and it seems like bit of a drag. But that's the price for secure staleless authentication.
+But as you can see, this adds new authrorization level for a consumer of the API, since she has to make sure to pass in the email on every request and it seems like bit of a drag. But that's the price for secure staleless authentication.
 
-This is actually the easier solution to securing this API. Other option is to introduce more secure approach to generating API keys, e.g. *JWT*.
+This is actually the easier solution to securing this particular API. Other option is to introduce more secure approach to generating API keys, e.g. *JWT*.
 
 ## JWT &ndash; JSON Web Tokens
 
@@ -160,6 +160,8 @@ end
 And that's it. No API key is stored, only credentials for user.
 
 You should extract `encode` and `decode` into separate class or service object, e.g. `AuthenticationToken`, which wraps JWT and know how to extract request headers and lookup user. Good idea is to setup expiration by `exp` payload attribute as well. Other than that, your simple secure authentication is pretty much done.
+
+As you can see, JWT yields information to user in payload attribute, but you can remidy this by using you own approach for user lookup. You can generate your own cryptic token for each user, for instance. Timing attack would be pointless since you would validate the key first before trying to find a user by your token and the only information about encryption that would be a relevant to timing attack might be encryption algorithm mechanics, depending on proficiency of encryption implementation.
 
 There're also other robust solutions to authentication, for instance [OAuth2](http://oauth.net/2/). So before jumping into JWT, make sure to look into other alternatives as well.
 
