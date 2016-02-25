@@ -3,9 +3,7 @@ layout: post
 title: Secure Your API Authentication
 ---
 
-Judging from numerous different APIs I've used, many of them lacked good authentication principles along with not so great security and often url formats and versioning. Not to be mistaken, mine included.
-
-[Hypermedia, REST and HTTP](http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http) are still bit misunderstood and many developers out there apply their own conclusions about how the authentication and versioning should look like, e.g. `/api/v1/posts.json?api_key=KEY`. But that's a whole another topic. Let's focus on authentication for now.
+[Hypermedia, REST and HTTP](http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http) are still bit misunderstood and many developers out there apply their own conclusions about how the authentication and versioning should look like, e.g. `/api/v1/posts.json?api_key=KEY`. Let's focus on authentication.
 
 In most cases when building API, you want to build out some sort of authentication to control who have access to API and who doesn't. Since authentication is usually driven by need to control amount of users and managing traffic, or managing paid consumers for the API, you want it to be as secure as possible. Therefore, you eventually don't want to end up with this &ndash; `/api/posts.json?api_key=KEY`, but you should rather embrace HTTP headers instead. Here's why.
 
