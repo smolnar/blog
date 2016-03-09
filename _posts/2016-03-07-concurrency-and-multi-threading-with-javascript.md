@@ -73,7 +73,7 @@ So when you run CPU intensive task in JavaScript, even as callback run by Event 
 ## Web Workers
 
 > A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
-
+>
 > &mdash; <cite>[W3Schools](http://www.w3schools.com/html/html5_webworkers.asp)</cite>
 
 An awesome feature of HTML5 which basicly let's you have multiple workers handling computation concurrently. It sounds like a wonderland, but there's a catch.
