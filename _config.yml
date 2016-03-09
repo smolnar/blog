@@ -13,6 +13,10 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+# Markdown settings
+markdown: redcarpet
+highlighter: rouge
+
 # About/contact
 author:
   name:              Samuel Molnar
@@ -25,3 +29,5 @@ version:             1.0.0
 # Gems
 gems:
   - jekyll-gist
+  - rouge
+  - redcarpet
