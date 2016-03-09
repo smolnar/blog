@@ -117,7 +117,7 @@ Concurrency is real and workers spawn actual OS threads. So let's just sum up ma
 3. Worker cannot access DOM and has its own dedicated scope without access to window. Another way of achieving thread-safety since DOM is not thread-safe.
 4. When workers fail, they fail silently. Catching errors works with `onerror` callback.
 
-And that's the catch &ndash; thread-safety. Since workers need to run in separate scope, you can't access features like `localStorage`, DOM or many others others. So eventually, you can't leverage power of Web Workers to run intensive data import into `localStorage` to improve your app performance.
+And that's the catch &ndash; thread-safety. Since workers need to run in separate scope, you can't access features like `localStorage`, DOM or many others. So eventually you can't leverage power of Web Workers to run intensive data import into `localStorage` to improve your app performance.
 
 So that's most of the key points about Web Workers. For more thourough introduction, see [MDN on Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
 
@@ -168,4 +168,4 @@ Hiding this implementation behind a curtain of classes and factory methods witho
 
 ## Wrapping up
 
-Web Workers are an awesome feature, but the sad thing about them is their limitation. In order to achieve bullet-proof thread-safety, you can't access `localStorage`, which might be very hand in some cases. For example, an app could be pushing a ton of data into `localStorage` in background without slowing down the main script and the main script would be continuously showing the results. But it's still very easy handy tool for performing CPU intensive task client-side, e.g. computing results for rendering engine. *So game on!*
+Web Workers are an awesome feature, but the sad thing about them is their limitation. In order to achieve bullet-proof thread-safety, you can't access `localStorage`, which might be very hand in some cases. For example, an app could be pushing a ton of data into `localStorage` in background without slowing down the main script and the main script would be continuously showing the results. But it's still very handy tool for performing CPU intensive task client-side, e.g. computing results for rendering engine. *So game on!*
