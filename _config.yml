@@ -1,5 +1,5 @@
 # Permalinks
-permalink:           pretty
+permalink: pretty
 
 # Setup
 title:               The Clockwords
@@ -13,10 +13,6 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
-# Markdown settings
-markdown: kramdown
-highlighter: rouge
-
 # About/contact
 author:
   name:              Samuel Molnar
@@ -26,8 +22,9 @@ author:
 # Custom vars
 version:             1.0.0
 
-# Gems
-gems:
-  - jekyll-gist
-  - rouge
-  - redcarpet
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
