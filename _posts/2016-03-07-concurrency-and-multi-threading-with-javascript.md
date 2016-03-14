@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Concurrency and Multi-threading with JavaScript
+keywords: javascript, multi-threading, concurrency, web workers, event loop, ajax, nonblocking io, asynchronous processing, thread-safety, xhr
 ---
 
 As of JavaScript's beginning, developers glancing over JavaScript code might get confused and think that JavaScript is a concurrent language. But you can't blame them. Just looking over this code, it sure looks concurrent.

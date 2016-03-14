@@ -1,9 +1,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="ruby, javascript, databases, postgresql, programming, machine learning, ruby on rails, rails">
-  <meta name=description" content="A Blog about Ruby on Rails, JavaScript, databases, PostgreSQL and other technologies by Samuel Molnár">
   <meta name="author" content="Samuel Molnár">
+
+  {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}">
+    <meta name="description" content="An article {{ page.title }} about {{ page.keywords }} by Samuel Molnár">
+  {% else %}
+    <meta name="keywords" content="ruby, javascript, databases, postgresql, programming, machine learning, ruby on rails, rails">
+    <meta name="description" content="A Blog about Ruby on Rails, JavaScript, databases, PostgreSQL, machine learning and other technologies by Samuel Molnár">
+  {% endif %}
 
   <title>
     {% if page.title == "Home" %}

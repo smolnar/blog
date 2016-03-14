@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Secure Your API Authentication
+keywords: jwt, rails, rails-api, hypermedia, rest, api authentication, timing attacks, crypto
 ---
 
 [Hypermedia, REST and HTTP](http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http) are still bit misunderstood and many developers out there apply their own conclusions about how the authentication and versioning should look like, e.g. `/api/v1/posts.json?api_key=KEY`.
@@ -23,7 +24,7 @@ end
 
 *Rather than rendering unauthorized response, you should consider raising an exception. Excuse my brewity.*
 
-At the first sight, this approach doesn't seem that bad. But once you consider [timing attacks](https://codahale.com/a-lesson-in-timing-attacks/), you can quickly realize, that you're approach is faulty from beginning. Comparison in database might be a subject to timining attack as well and can yield some unwanted information, unless you hash the key in database. But that's not a great solution either, since you're just covering the approach itself.
+At the first sight, this approach doesn't seem that bad. But once you consider [timing attacks](https://codahale.com/a-lesson-in-timing-attacks/), you can quickly realize, that you're approach is faulty from beginning. Comparison in database might be a subject to timing attack as well and can yield some unwanted information, unless you hash the key in database. But that's not a great solution either, since you're just covering the approach itself.
 
 Instead of passing the key as a parameter, you should rather use HTTP headers. HTTP header `Authorization` comes in hand. So you refactor the `authenticate` method accordingly.
 
