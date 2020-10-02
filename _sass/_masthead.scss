@@ -3,21 +3,12 @@
 // Super small header above the content for site name and short description.
 
 .masthead {
-  width: 350px;
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   margin-top: 2rem;
-
-  @media(min-width: 900px) {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    margin-top: 0;
-  }
 
   .logo {
     margin-left: auto;
@@ -27,10 +18,19 @@
   }
 
   small {
-    margin-top: 0.5rem;
-    font-size: $root-font-size * 0.9;
+    font-size: $root-font-size * 0.75;
     font-weight: $masthead-font-weight;
     color: $gray-4;
+  }
+
+  .about-link {
+    color: $gray-2;
+    text-decoration: none;
+
+    &:hover,.active,:active {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 
@@ -38,8 +38,8 @@
   margin-top: 0;
   margin-bottom: 0;
   color: black;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 
   a {
     color: inherit;

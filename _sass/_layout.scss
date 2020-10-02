@@ -8,14 +8,39 @@
   padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+}
 
-  @media(min-width: 900px) {
-    margin-left: 400px;
-    margin-right: 0px;
+.avatar {
+  max-width: 400px;
+  position: absolute;
+}
+
+.list-rang {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    padding-left: 2em;
+    text-indent: -1em;
+  }
+
+  li:before {
+    content: "⟩";
+    padding-right: 5px;
   }
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
+  color: $gray-2;
+
+  a {
+    color: $gray-2;
+
+    &:hover, :active, .active {
+      color: $gray-4;
+    }
+  }
 }

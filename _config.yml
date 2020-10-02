@@ -2,8 +2,8 @@
 permalink: pretty
 
 # Setup
-title:               The Clockwords
-url:                 http://theclockwords.com
+title:               Samuel Molnár
+url:                 https://samuelmolnar.com
 base:
 
 # Assets
@@ -17,6 +17,7 @@ sass:
 author:
   name:              Samuel Molnar
   url:               https://twitter.com/samuelmolnar
+  github_url:        https://github.com/smolnar
   email:             molnar.samuel@gmail.com
 
 # Custom vars
