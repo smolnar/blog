@@ -12,7 +12,7 @@
   {% endif %}
 
   <title>
-    {% if page.title == "Home" %}
+    {% if page.title == "Home" or page.title == "About" %}
       {{ site.title }}
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
