@@ -2,11 +2,11 @@
 layout: default
 title: About
 type: about
-html:
-  left: about/avatar.html
 ---
 
 <header class="masthead">
+  <img class="avatar" src="/public/avatar.jpg" />
+
   <h1 class="masthead-title">
     <a href="{{ site.base }}/" title="Home">Hello. I'm Samuel Molnár.</a>
   </h1>
@@ -15,23 +15,32 @@ html:
 
   <p>Previously I founded and worked on open data projects, namely</p>
 
-  <ul class="list-rang">
+  <ul class="list-unstyled">
     <li>
       <a target="_blank" href="https://otvorenesudy.sk">Otvorené Súdy</a>
     </li>
 
     <li>
-      <a target="_blank" href="https://api.otvorenesudy.sk">Otvorené Súdy API</a>
+      <a target="_blank" href="https://api.otvorenesudy.sk"
+        >Otvorené Súdy API</a
+      >
     </li>
 
     <li>
-      <a target="_blank" target="_blank" href="https://vampart.webumenia.sk">VampArt</a>
+      <a target="_blank" target="_blank" href="https://vampart.webumenia.sk"
+        >VampArt</a
+      >
     </li>
   </ul>
 
-  <p>Currently I'm focusing on machine learning, NLP, advanced search and analytics.</p>
+  <p>
+    Currently I'm focusing on machine learning, NLP, advanced search and
+    analytics.
+  </p>
 
   <p>Apart from tech I run and cycle, quite a lot.</p>
 
-  You can reach me on <a href="{{ site.author.url }}" target="_blank">Twitter</a> or at <a href="mailto:{{ site.author.email }}" target="_blank">my email</a>.
+  You can reach me on
+  <a href="{{ site.author.url }}" target="_blank">Twitter</a> or at
+  <a href="mailto:{{ site.author.email }}" target="_blank">my email</a>.
 </header>

@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
   {% include head.html %}
 
   <body>
-    {% if page.html.left %}
-      {% include {{ page.html.left }} %}
-    {% endif %}
+    {% if page.html.left %} {% include {{ page.html.left }} %} {% endif %}
 
     <div class="container content">
       {% if page.type == 'main' %}
-        <header class="masthead">
-          <h1 class="masthead-title">
-            <a href="{{ site.base }}/" title="Home">Hello. I'm Samuel Molnár.</a>
-          </h1>
+      <header class="masthead">
+        <img class="avatar" src="/public/avatar.jpg" />
+        <h1 class="masthead-title">
+          <a href="{{ site.base }}/" title="Home">Hello. I'm Samuel Molnár.</a>
+        </h1>
 
-          I'm a freelance software engineer. Previously I founded and worked on open data projects.
-          <br>
-          Currently I'm focusing on machine learning, NLP, advanced search and analytics. <a class="about-link" href="{{ site.url }}/about">&rang;</a>
-        </header>
+        I'm a freelance software engineer. Previously I founded and worked on
+        open data projects.
+        <br />
+        Currently I'm focusing on machine learning, NLP, advanced search and
+        analytics. <a class="about-link" href="{{ site.url }}/about">&rang;</a>
+      </header>
       {% endif %}
 
-      <main>
-        {{ content }}
-      </main>
+      <main>{{ content }}</main>
 
       {% if page.type == post %}
-        <header class="masthead">
-          <h1 class="masthead-title">
-            <a href="{{ site.base }}/" title="Home">Hello. I'm Samuel Molnár.</a>
-          </h1>
+      <header class="masthead">
+        <h1 class="masthead-title">
+          <a href="{{ site.base }}/" title="Home">Hello. I'm Samuel Molnár.</a>
+        </h1>
 
-          I'm a freelance software engineer. Previously I founded and worked on open data projects.
-          <br>
-          Currently I'm focusing on machine learning, NLP, advanced search and analytics. <a class="about-link" href="{{ site.url }}/about">&rang;</a>
-        </header>
+        I'm a freelance software engineer. Previously I founded and worked on
+        open data projects.
+        <br />
+        Currently I'm focusing on machine learning, NLP, advanced search and
+        analytics. <a class="about-link" href="{{ site.url }}/about">&rang;</a>
+      </header>
       {% endif %}
 
       <footer class="footer">
@@ -42,24 +42,44 @@
           &copy; <time datetime="2016">2016 and beyond</time> &middot;
           <a href="{{ site.url }}/about">About</a> &middot;
           <a target="_blank" href="{{ site.author.url }}">Twitter</a> &middot;
-          <a target="_blank" href="{{ site.author.github_url }}">Github</a> &middot;
-          <a target="_blank" href="{{ site.author.strava_url }}">Strava</a> &middot;
-          <a href="mailto:{{ site.author.email }}">Email</a> &middot;
+          <a target="_blank" href="{{ site.author.github_url }}">Github</a>
+          &middot;
+          <a target="_blank" href="{{ site.author.strava_url }}">Strava</a>
+          &middot; <a href="mailto:{{ site.author.email }}">Email</a> &middot;
           <a target="_blank" href="{{ site.base }}/atom.xml">RSS</a> &middot;
-          Everything is under <a target="_blank" href="http://en.wikipedia.org/wiki/MIT_License">MIT</a> &middot;
-          Based on Jekyll with customized <a target="_blank" href="https://github.com/poole/poole">Poole</a>
+          Everything is under
+          <a target="_blank" href="http://en.wikipedia.org/wiki/MIT_License"
+            >MIT</a
+          >
+          &middot; Based on Jekyll with customized
+          <a target="_blank" href="https://github.com/poole/poole">Poole</a>
         </small>
       </footer>
     </div>
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
 
-      ga('create', 'UA-74710337-1', 'auto');
-      ga('send', 'pageview');
+      ga("create", "UA-74710337-1", "auto");
+      ga("send", "pageview");
     </script>
   </body>
 </html>

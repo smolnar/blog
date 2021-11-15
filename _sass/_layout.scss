@@ -4,15 +4,10 @@
 
 .container {
   max-width: 48rem;
-  padding-left:  1.5rem;
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.avatar {
-  max-width: 400px;
-  position: absolute;
 }
 
 .list-rang {
@@ -31,6 +26,12 @@
   }
 }
 
+.list-unstyled {
+  padding-left: 0px;
+  margin-left: 0px;
+  list-style: none;
+}
+
 footer {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -39,7 +40,9 @@ footer {
   a {
     color: $gray-2;
 
-    &:hover, :active, .active {
+    &:hover,
+    :active,
+    .active {
       color: $gray-4;
     }
   }
